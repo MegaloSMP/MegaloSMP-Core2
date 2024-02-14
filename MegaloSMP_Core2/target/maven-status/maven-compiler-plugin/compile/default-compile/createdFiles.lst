@@ -1,0 +1,10 @@
+com\alticator\megalosmp\megalosmpcore2\Util.class
+com\alticator\megalosmp\megalosmpcore2\ExchangeTabCompleter.class
+com\alticator\megalosmp\megalosmpcore2\EventListener.class
+com\alticator\megalosmp\megalosmpcore2\FoodUtilityExchangeTabCompleter.class
+com\alticator\megalosmp\megalosmpcore2\FoodUtilityExchange.class
+com\alticator\megalosmp\megalosmpcore2\PredefExchangeTabCompleter.class
+com\alticator\megalosmp\megalosmpcore2\MegaloSMP_Core2.class
+com\alticator\megalosmp\megalosmpcore2\Exchange.class
+com\alticator\megalosmp\megalosmpcore2\PredefExchange.class
+com\alticator\megalosmp\megalosmpcore2\Balance.class

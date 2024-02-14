@@ -1,0 +1,34 @@
+name: MegaloSMP_Core2
+version: '1.0-SNAPSHOT'
+main: com.alticator.megalosmp.megalosmpcore2.MegaloSMP_Core2
+description: MegaloSMP_Core 2
+api-version: '1.20'
+commands:
+  balance:
+    aliases: bal
+    description: Counts the gold in your inventory.
+    usage: "</command>"
+  exchange:
+    aliases: x
+    description: Exchange service
+    usage: "</command> buy/sell [item] (quantity)"
+  predefexchange:
+    aliases: s
+    description: Exchange service for predefined items
+    usage: "</command> [item/package]"
+  foodutilityexchange:
+    aliases: z
+    description: Exchange service for food and utility items
+    usage: "</command> [item/package]"
+  exchangeprice:
+    aliases: xprice
+    description: Exchange Service price checker
+    usage: "</command> [item] (quantity)"
+  predefexchangeprice:
+    aliases: sprice
+    description: PredefExchange Service price checker
+    usage: "</command> [item] (quantity)"
+  foodutilityexchangeprice:
+    aliases: zprice
+    description: Food and Utility Exchange Service price checker
+    usage: "</command> [item] (quantity)"
