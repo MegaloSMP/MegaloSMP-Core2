@@ -1,5 +1,6 @@
 package com.alticator.megalosmp.megalosmpcore2;
 
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -11,13 +12,11 @@ import java.util.List;
 
 public class ExchangeTabCompleter implements TabCompleter {
 
-    public static String[] options = {"acacia_log", "birch_log", "mangrove_log", "jungle_log", "dark_oak_log",
-            "oak_log", "spruce_log", "ender_pearl", "diamond", "iron", "iron_ingot", "asphalt", "cyan_terracotta",
-            "cobblestone", "stone", "smooth_stone", "stone_bricks", "white_concrete", "light_blue_concrete",
-            "cyan_concrete", "yellow_concrete", "red_concrete", "netherite_ingot", "coal", "sea_lantern", "chest", "ender_chest", "glass",
-            "white_stained_glass", "black_stained_glass", "bed", "gray_concrete", "villager_spawn_egg",
-            "emerald_block", "wool", "bed", "villager_spawn_egg", "emerald_block", "stone_brick_wall", "end_rod",
-            "andesite", "diorite", "beacon"};
+    private static String[] options;
+
+    public ExchangeTabCompleter(String[] items) {
+        options = items;
+    }
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         List<String> suggestions = new ArrayList<String>();

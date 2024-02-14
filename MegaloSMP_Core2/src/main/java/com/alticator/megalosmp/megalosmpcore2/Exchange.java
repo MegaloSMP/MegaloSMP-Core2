@@ -1,5 +1,6 @@
 package com.alticator.megalosmp.megalosmpcore2;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -13,178 +14,29 @@ public class Exchange implements CommandExecutor {
     Material argMaterial;
     int argMaterialPrice;
 
-    // Prices in gold ingots
-    // Note that some prices hardcoded in the parseMaterial() method.
-    private final int logPrice = 1;
-    private final int enderPearlPrice = 2;
-    private final int diamondPrice = 24;
+    private static String[] exchangeItems;
+    private static int[] exchangePrices;
+    private static Material[] exchangeMaterials;
 
-    private final int concretePrice = 3;
 
     /////////////////////////
 
-    public void parseMaterial(String arg) {
-        Material pay;
-        int price = 0;
-        switch (arg.toLowerCase().replace("_", "")) {
-            case "acacialog":
-                pay = Material.ACACIA_LOG;
-                price = logPrice;
-                break;
-            case "birchlog":
-                pay = Material.BIRCH_LOG;
-                price = logPrice;
-                break;
-            case "mangrovelog":
-                pay = Material.MANGROVE_LOG;
-                price = logPrice;
-                break;
-            case "junglelog":
-                pay = Material.JUNGLE_LOG;
-                price = logPrice;
-                break;
-            case "darkoaklog":
-                pay = Material.DARK_OAK_LOG;
-                price = logPrice;
-                break;
-            case "oaklog":
-                pay = Material.OAK_LOG;
-                price = logPrice;
-                break;
-            case "sprucelog":
-                pay = Material.SPRUCE_LOG;
-                price = logPrice;
-                break;
-            case "enderpearl":
-                pay = Material.ENDER_PEARL;
-                price = enderPearlPrice;
-                break;
-            case "diamond":
-                pay = Material.DIAMOND;
-                price = diamondPrice;
-                break;
-            case "iron":
-            case "ironingot":
-                pay = Material.IRON_INGOT;
-                price = 16;
-                break;
-            case "cobblestone":
-                pay = Material.COBBLESTONE;
-                price = 1;
-                break;
-            case "stone":
-                pay = Material.STONE;
-                price = 2;
-                break;
-            case "smoothstone":
-                pay = Material.SMOOTH_STONE;
-                price = 3;
-                break;
-            case "stonebricks":
-                pay = Material.STONE_BRICKS;
-                price = 2;
-                break;
-            case "whiteconcrete":
-                pay = Material.WHITE_CONCRETE;
-                price = concretePrice;
-                break;
-            case "lightblueconcrete":
-                pay = Material.LIGHT_BLUE_CONCRETE;
-                price = concretePrice;
-                break;
-            case "cyanconcrete":
-                pay = Material.CYAN_CONCRETE;
-                price = concretePrice;
-                break;
-            case "yellowconcrete":
-                pay = Material.YELLOW_CONCRETE;
-                price = concretePrice;
-                break;
-            case "redconcrete":
-                pay = Material.RED_CONCRETE;
-                price = concretePrice;
-                break;
-            case "grayconcrete":
-                pay = Material.GRAY_CONCRETE;
-                price = concretePrice;
-                break;
-            case "asphalt":
-            case "cyanterracotta":
-                pay = Material.CYAN_TERRACOTTA;
-                price = concretePrice;
-                break;
-            case "netheriteingot":
-                pay = Material.NETHERITE_INGOT;
-                price = 36;
-                break;
-            case "coal":
-                pay = Material.COAL;
-                price = 3;
-                break;
-            case "sealantern":
-                pay = Material.SEA_LANTERN;
-                price = 3;
-                break;
-            case "chest":
-                pay = Material.CHEST;
-                price = 1;
-                break;
-            case "enderchest":
-                pay = Material.ENDER_CHEST;
-                price = 128;
-                break;
-            case "glass":
-                pay = Material.GLASS;
-                price = 2;
-                break;
-            case "whitestainedglass":
-                pay = Material.WHITE_STAINED_GLASS;
-                price = 2;
-                break;
-            case "blackstainedglass":
-                pay = Material.BLACK_STAINED_GLASS;
-                price = 2;
-                break;
-            case "wool":
-                pay = Material.WHITE_WOOL;
-                price = 1;
-                break;
-            case "bed":
-                pay = Material.PURPLE_BED;
-                price = 8;
-                break;
-            case "villagerspawnegg":
-                pay = Material.VILLAGER_SPAWN_EGG;
-                price = 1024;
-                break;
-            case "emeraldblock":
-                pay = Material.EMERALD_BLOCK;
-                price = 32;
-                break;
-            case "stonebrickwall":
-                pay = Material.STONE_BRICK_WALL;
-                price = 2;
-                break;
-            case "endrod":
-                pay = Material.END_ROD;
-                price = 512;
-                break;
-            case "andesite":
-                pay = Material.ANDESITE;
-                price = 1;
-                break;
-            case "diorite":
-                pay = Material.DIORITE;
-                price = 1;
-                break;
-            case "beacon":
-                pay = Material.BEACON;
-                price = 512;
-                break;
-            default:
-                pay = null;
+    public Exchange(String[] items, int[] prices, Material[] materials) {
+        exchangeItems = items;
+        exchangePrices = prices;
+        exchangeMaterials = materials;
+    }
 
-                // When updating, also add new items to ExchangeTabCompleter
+    public void parseMaterial(String arg) {
+        Material pay = null;
+        int price = 0;
+        Bukkit.getConsoleSender().sendMessage("Listing items from Exchange: ");
+        for (int i = 0; i < exchangeItems.length; i++) {
+            Bukkit.getConsoleSender().sendMessage(exchangeItems[i]);
+            if (exchangeItems[i] != null && exchangeItems[i].replace("_", "").replace(" ", "").equalsIgnoreCase(arg.replace("_", "").replace(" ", ""))) {
+                pay = exchangeMaterials[i];
+                price = exchangePrices[i];
+            }
         }
         argMaterial = pay;
         argMaterialPrice = price;
