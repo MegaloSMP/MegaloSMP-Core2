@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PredefExchangeTabCompleter implements TabCompleter {
     public String[] packs = {"UltimatePick", "ProPick", "DestroyerPick", "UltimateSword", "KnockbackStick", "UltimateAxe",
-            "UltimateShovel", "UltimateHoe", "MaximumSword", "scaffolding"}; // Must match the list in the PredefExchange class
+            "UltimateShovel", "UltimateHoe", "MaximumSword", "TimeMachine"}; // Must match the list in the PredefExchange class
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         List<String> suggestions = new ArrayList<String>();

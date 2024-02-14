@@ -18,7 +18,6 @@ public class PredefExchange implements CommandExecutor {
             ItemStack item;
             int price;
 
-
             switch (args[0].toLowerCase().replace("_", "")) {
                 case "propick":
                     item = new ItemStack(Material.IRON_PICKAXE, 1);
@@ -79,6 +78,12 @@ public class PredefExchange implements CommandExecutor {
                     item.addUnsafeEnchantment(Enchantment.SWEEPING_EDGE, 10);
                     Util.setItemStackName(item, "MaximumSword");
                     price = 2048;
+                    break;
+                case "timemachine":
+                    item = new ItemStack(Material.CLOCK);
+                    Util.setItemStackName(item, "Time Machine");
+                    player.getWorld().setTime(1000);
+                    price = 64;
                     break;
                 default:
                     player.sendMessage(ChatColor.RED + "Invalid pack name.");
