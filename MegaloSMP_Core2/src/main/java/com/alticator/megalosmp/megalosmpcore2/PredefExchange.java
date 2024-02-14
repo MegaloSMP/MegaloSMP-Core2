@@ -31,45 +31,53 @@ public class PredefExchange implements CommandExecutor {
                     item = new ItemStack(Material.NETHERITE_PICKAXE, 1);
                     item.addEnchantment(Enchantment.DIG_SPEED, 5);
                     item.addEnchantment(Enchantment.DURABILITY, 3);
+                    Util.setItemStackName(item, "UltimatePick");
                     price = 128;
                     break;
                 case "destroyerpick":
                     item = new ItemStack(Material.NETHERITE_PICKAXE, 1);
                     item.addUnsafeEnchantment(Enchantment.DIG_SPEED, 20);
                     item.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+                    Util.setItemStackName(item, "DestroyerPick");
                     price = 1024;
                     break;
                 case "ultimatesword":
                     item = new ItemStack(Material.NETHERITE_SWORD, 1);
                     item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
+                    Util.setItemStackName(item, "UltimateSword");
                     price = 1024;
                     break;
                 case "knockbackstick":
                     item = new ItemStack(Material.STICK, 1);
                     item.addUnsafeEnchantment(Enchantment.KNOCKBACK, 50);
+                    Util.setItemStackName(item, "KnockbackStick");
                     price = 512;
                     break;
                 case "ultimateaxe":
                     item = new ItemStack(Material.NETHERITE_AXE, 1);
                     item.addUnsafeEnchantment(Enchantment.DIG_SPEED, 10);
                     item.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+                    Util.setItemStackName(item, "UltimateAxe");
                     price = 128;
                     break;
                 case "ultimateshovel":
                     item = new ItemStack(Material.NETHERITE_SHOVEL, 1);
                     item.addUnsafeEnchantment(Enchantment.DIG_SPEED, 10);
                     item.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+                    Util.setItemStackName(item, "UltimateShovel");
                     price = 128;
                     break;
                 case "ultimatehoe":
                     item = new ItemStack(Material.NETHERITE_HOE, 1);
                     item.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+                    Util.setItemStackName(item, "UltimateHoe");
                     price = 128;
                     break;
                 case "maximumsword":
                     item = new ItemStack(Material.NETHERITE_SWORD, 1);
                     item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 255);
                     item.addUnsafeEnchantment(Enchantment.SWEEPING_EDGE, 10);
+                    Util.setItemStackName(item, "MaximumSword");
                     price = 2048;
                     break;
                 default:

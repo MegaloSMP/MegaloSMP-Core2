@@ -30,9 +30,7 @@ public class Exchange implements CommandExecutor {
     public void parseMaterial(String arg) {
         Material pay = null;
         int price = 0;
-        Bukkit.getConsoleSender().sendMessage("Listing items from Exchange: ");
         for (int i = 0; i < exchangeItems.length; i++) {
-            Bukkit.getConsoleSender().sendMessage(exchangeItems[i]);
             if (exchangeItems[i] != null && exchangeItems[i].replace("_", "").replace(" ", "").equalsIgnoreCase(arg.replace("_", "").replace(" ", ""))) {
                 pay = exchangeMaterials[i];
                 price = exchangePrices[i];
